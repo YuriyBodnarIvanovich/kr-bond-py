@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{%block content%}
+{%from "_render_field.html" import render_field%}
+<div class="form-wrapper product-create" align="center" id={'hello'}>
+      <form method="POST" action="{{ url_for('product_bp_in.product_create') }}">
+                  {{form.csrf_token}}
+                  {{ render_field(form.codeOfProduct) }}<br>
+                  {{ render_field(form.name) }}<br>
+                  {{ render_field(form.typeOfProduct) }}<br>
+                  {{ render_field(form.is_product) }}<br>
+                  {{ render_field(form.count) }}<br>
+                  {{ render_field(form.price) }}<br>
+                  {{ render_field(form.description) }}<br>
+          {{ form.submit(class="btn btn-light btn-lg") }}
+      </form>
+</div>
+{%endblock%}

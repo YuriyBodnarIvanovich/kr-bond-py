@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{%block content%}
+<div align="center">
+ <a href="{{url_for('product_bp_in.products', id=product.id)}}" class="btn btn-secondary fs-5"> На головну </a>
+ <table class="table table-striped w-auto" border="3" align="center">
+  <thead>
+    <tr>
+        <td class="table_form" scope="col">Id</td>
+      <td class="table_form" scope="col">Code Of product</td>
+        <td class="table_form" scope="col">Name</td>
+        <td class="table_form" scope="col">Type Of product</td>
+      <td class="table_form" scope="col">Is product</td>
+        <td class="table_form" scope="col">Count</td>
+        <td class="table_form" scope="col">Price</td>
+        <td class="table_form" scope="col">Description</td>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+       <td class="table_form">{{product.id}}</td>
+       <td class="table_form">{{product.codeOfProduct}}</td>
+       <td class="table_form"><a class="href_in_background" href={{url_for('product_bp_in.product_show', id=product.id)}}>{{product.name}}</a></td>
+       <td class="table_form">{{product.typeOfProduct}}</td>
+       <td class="table_form">{{product.is_product}}</td>
+       <td class="table_form">{{product.count}}</td>
+       <td class="table_form">{{product.price}}</td>
+       <td class="table_form">{{product.description}}</td>
+  </tr>
+  </tbody>
+</table>
+    <a href="{{url_for('product_bp_in.product_update', id=product.id)}}" class="btn btn-primary fs-5"> Edit </a>
+    <a href="{{url_for('product_bp_in.product_delete', id=product.id)}}" class="btn  btn-danger fs-5"> Delete </a>
+</div>
+{%endblock%}
